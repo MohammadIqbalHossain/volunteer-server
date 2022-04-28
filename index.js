@@ -30,7 +30,14 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
         const result = await cursor.toArray();
         res.send(result);
     });
-    
+
+    app.post('/volunteers', async(req, res) => {
+      const newVolunteer = req.body;
+      const result = volunteerCollections.insertOne(newVolunteer);
+      res.send(result);
+    });
+
+    app.get('')
 
    }
    finally{
